@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lucky Sweets – Fresh Sweets, Snacks & Bakery | Bhota, Hamirpur</title>
+  <meta name="description" content="Lucky Sweets Bhota - Fresh Indian sweets, bakery, namkeen, jalebi, cakes, wedding orders, festival sweets and gift boxes in Bhota, Hamirpur." />
+  <meta name="keywords" content="Lucky Sweets Bhota, Sweet Shop in Bhota, Indian Sweets Bhota, Fresh Jalebi Bhota, Bakery in Bhota" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --red:#c62828;
+      --gold:#d4af37;
+      --light:#fff4e5;
+      --muted:#666;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; scroll-behavior:smooth; }
+
+    body{
+      font-family: "Poppins", sans-serif;
+      background:#fff;
+      color:#333;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header{
+      position:fixed;
+      top:0; left:0; width:100%;
+      background:white;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+      z-index:999;
+    }
+
+    .container{ max-width:1200px; margin:auto; padding:0 20px; }
+
+    nav{
+      display:flex; justify-content:space-between; align-items:center;
+      height:70px;
+    }
+
+    .logo{ font-size:26px; font-weight:700; color:var(--red); }
+    .logo span{ color:var(--gold); }
+
+    /* desktop nav */
+    nav ul{
+      display:flex; list-style:none; gap:22px; align-items:center;
+    }
+    nav a{ text-decoration:none; color:#333; font-weight:500; }
+    nav a:hover{ color:var(--red); }
+
+    /* mobile nav toggle */
+    .nav-toggle{
+      display:none;
+      background:transparent;
+      border:0;
+      font-size:26px;
+      cursor:pointer;
+      color:var(--red);
+    }
+
+    /* hero */
+    .hero{
+      margin-top:70px;
+      height:85vh;
+      background: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      display:flex; align-items:center; position:relative;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,.55);
+    }
+    .hero-content{ position:relative; z-index:2; color:white; max-width:650px; padding:40px; }
+    .hero h1{ font-size:56px; margin-bottom:20px; line-height:1.02; }
+    .hero p{ font-size:20px; margin-bottom:28px; color:#fff; opacity:.95; }
+
+    .btn{
+      display:inline-block; padding:12px 28px; margin:6px; border-radius:50px;
+      background:var(--gold); color:#222; font-weight:600; text-decoration:none; transition:.25s;
+    }
+    .btn:hover{ background:var(--red); color:white; }
+
+    section{ padding:80px 20px; }
+
+    .title{ text-align:center; margin-bottom:40px; }
+    .title h2{ font-size:34px; color:var(--red); }
+    .title p{ color:var(--muted); margin-top:8px; }
+
+    .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+
+    .card{
+      background:white; border-radius:16px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,.06); transition:.25s;
+    }
+    .card:hover{ transform:translateY(-6px); }
+    .card img{ width:100%; height:200px; object-fit:cover; display:block; }
+    .card-body{ padding:18px; }
+    .card h3{ color:var(--red); margin-bottom:8px; font-size:18px; }
+
+    .special{ background:var(--light); }
+
+    .features{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;
+    }
+    .feature{ padding:24px; background:white; border-radius:14px; box-shadow:0 5px 15px rgba(0,0,0,.06); text-align:center; }
+    .feature h4{ color:var(--red); }
+
+    .review{ background:white; padding:20px; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,.06); text-align:center; }
+
+    .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+    .gallery img{ width:100%; height:220px; object-fit:cover; border-radius:12px; display:block; }
+
+    .contact{ display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start; }
+
+    iframe{ width:100%; height:420px; border:0; border-radius:12px; }
+
+    footer{ background:#111; color:white; padding:36px 20px; text-align:center; }
+
+    .floating{ position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:12px; z-index:999; }
+    .float-btn{ width:56px; height:56px; border-radius:50%; display:flex; justify-content:center; align-items:center; background:var(--red); color:white; font-size:22px; text-decoration:none; box-shadow:0 5px 20px rgba(0,0,0,.25); }
+
+    .today{ background:#fff4e5; padding:28px; border-radius:14px; text-align:center; }
+    .today ul{ list-style:none; columns:2; margin-top:12px; color:#333; }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .hero h1{ font-size:36px; }
+      .hero{ height:70vh; }
+      nav ul{ display:none; position:absolute; right:20px; top:70px; background:white; box-shadow:0 8px 30px rgba(0,0,0,.08); border-radius:10px; padding:12px; flex-direction:column; min-width:180px; }
+      nav ul.show{ display:flex; }
+      .nav-toggle{ display:inline-block; }
+      .contact{ grid-template-columns:1fr; }
+      .today ul{ columns:1; }
+    }
+
+    /* small accessibility helper for keyboard focus */
+    a:focus, button:focus { outline:3px solid rgba(198,40,40,.18); outline-offset:2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <div class="logo">Lucky <span>Sweets</span></div>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle menu">☰</button>
+
+        <ul id="mainNav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#festival">Festival</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-content container">
+        <h1 id="hero-heading">Fresh Sweets Made Every Day</h1>
+        <p>Traditional Taste • Pure Ingredients • Fresh Every Morning</p>
+        <a href="#menu" class="btn">View Menu</a>
+        <a href="tel:+919817904261" class="btn">Call Now</a>
+        <a href="#contact" class="btn">Get Directions</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="today" aria-labelledby="today-heading">
+          <h2 id="today-heading">Today's Fresh Specials</h2>
+          <ul>
+            <li>✔ Hot Jalebi</li>
+            <li>✔ Fresh Rasgulla</li>
+            <li>✔ Kaju Katli</li>
+            <li>✔ Milk Cake</li>
+            <li>✔ Samosa</li>
+            <li>✔ Bread Pakora</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="title">
+          <h2>Serving Happiness Through Traditional Taste</h2>
+          <p>Welcome to Lucky Sweets, your trusted sweet shop in Bhota, Hamirpur.</p>
+        </div>
+
+        <p style="text-align:center; max-width:900px; margin:auto; font-size:18px; color:var(--muted);">
+          We proudly serve fresh Indian sweets, namkeen, bakery items, snacks, festive gift boxes, and bulk wedding orders. Every sweet is prepared using premium ingredients, traditional recipes, and strict hygiene standards to deliver authentic taste and unforgettable celebrations.
+        </p>
+      </div>
+    </section>
+
+    <section id="menu" class="special">
+      <div class="container">
+        <div class="title">
+          <h2>Our Menu</h2>
+          <p>Fresh Indian Sweets, Bakery & Snacks</p>
+        </div>
+
+        <div class="cards" id="cards" aria-live="polite"></div>
+        <noscript>
+          <p style="text-align:center;color:var(--muted)">Menu requires JavaScript to render. Please enable JavaScript or see the non-script backup content.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section id="festival">
+      <div class="container">
+        <div class="title"><h2>Celebrate Every Festival with Lucky Sweets</h2></div>
+
+        <div class="features" role="list">
+          <div class="feature" role="listitem"><h4>Diwali Gift Boxes</h4></div>
+          <div class="feature" role="listitem"><h4>Raksha Bandhan Hampers</h4></div>
+          <div class="feature" role="listitem"><h4>Holi Specials</h4></div>
+          <div class="feature" role="listitem"><h4>Wedding Orders</h4></div>
+          <div class="feature" role="listitem"><h4>Corporate Gifts</h4></div>
+          <div class="feature" role="listitem"><h4>Custom Sweet Boxes</h4></div>
+          <div class="feature" role="listitem"><h4>Janmashtami</h4></div>
+          <div class="feature" role="listitem"><h4>Navratri</h4></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="special">
+      <div class="container">
+        <div class="title"><h2>Why Choose Lucky Sweets</h2></div>
+
+        <div class="features" role="list">
+          <div class="feature" role="listitem"><h4>Fresh Ingredients</h4></div>
+          <div class="feature" role="listitem"><h4>Traditional Recipes</h4></div>
+          <div class="feature" role="listitem"><h4>Daily Fresh Preparation</h4></div>
+          <div class="feature" role="listitem"><h4>Bulk Orders</h4></div>
+          <div class="feature" role="listitem"><h4>Friendly Staff</h4></div>
+          <div class="feature" role="listitem"><h4>Affordable Prices</h4></div>
+          <div class="feature" role="listitem"><h4>Quality Assurance</h4></div>
+          <div class="feature" role="listitem"><h4>Customer Satisfaction</h4></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="title"><h2>Gallery</h2></div>
+
+        <div class="gallery" aria-label="Image gallery">
+          <img src="https://images.unsplash.com/featured/?mithai" alt="Assorted Indian mithai" loading="lazy">
+          <img src="https://images.unsplash.com/featured/?jalebi" alt="Hot jalebi" loading="lazy">
+          <img src="https://images.unsplash.com/featured/?indian,bakery" alt="Indian bakery treats" loading="lazy">
+          <img src="https://images.unsplash.com/featured/?sweetshop" alt="Sweet shop display" loading="lazy">
+          <img src="https://images.unsplash.com/featured/?cake" alt="Cakes and pastries" loading="lazy">
+          <img src="https://images.unsplash.com/featured/?laddu" alt="Laddu sweets" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="title"><h2>Customer Reviews</h2></div>
+
+        <div class="cards">
+          <div class="review">★★★★★<br><br>Fresh sweets with amazing taste.</div>
+          <div class="review">★★★★★<br><br>Best sweet shop for festival shopping.</div>
+          <div class="review">★★★★★<br><br>Excellent quality and polite staff.</div>
+          <div class="review">★★★★★<br><br>Highly recommended for wedding orders.</div>
+          <div class="review">★★★★★<br><br>Fresh jalebi every morning.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="title"><h2>Visit Lucky Sweets</h2></div>
+
+        <div class="contact">
+          <div>
+            <h3>Lucky Sweets</h3>
+            <address>
+              Bhota, Hamirpur<br>
+              Himachal Pradesh - 176041
+            </address>
+            <p><strong>Phone:</strong> <a href="tel:+919817904261">+91 98179 04261</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@luckysweets.in">info@luckysweets.in</a></p>
+            <p><strong>Hours:</strong> 7:00 AM – 9:00 PM</p>
+
+            <a class="btn" href="tel:+919817904261">Call Now</a>
+            <a class="btn" href="https://wa.me/919817904261" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+
+          <div>
+            <iframe src="https://www.google.com/maps?q=Lucky+Sweets+Bhota&output=embed" title="Lucky Sweets Bhota location"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h3>Lucky Sweets</h3>
+      <p>Fresh Sweets • Bakery • Namkeen</p>
+      <p>Bhota, Hamirpur, Himachal Pradesh</p>
+      <p>© 2026 Lucky Sweets. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <div class="floating" aria-hidden="false">
+    <a href="tel:+919817904261" class="float-btn" aria-label="Call">📞</a>
+    <a href="https://wa.me/919817904261" class="float-btn" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+    <a href="https://maps.google.com/?q=Lucky+Sweets+Bhota" class="float-btn" aria-label="Map" target="_blank" rel="noopener">📍</a>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    (function(){
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('mainNav');
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('show');
+      });
+
+      // close mobile nav when clicking outside on small screens
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove('show');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    })();
+
+    // Populate menu cards (avoids document.write)
+    (function(){
+      const items = [
+        "Milk Sweets","Kaju Katli","Rasgulla","Rasmalai","Barfi","Kalakand",
+        "Peda","Besan Ladoo","Motichoor Ladoo","Gulab Jamun","Jalebi",
+        "Samosa","Kachori","Bread Pakora","Paneer Pakora","Birthday Cakes",
+        "Cookies","Pastries","Namkeen","Bhujia","Mathri","Roasted Snacks"
+      ];
+
+      const cardsEl = document.getElementById('cards');
+
+      const cardsHTML = items.map(item => `
+        <div class="card" role="article" aria-label="${item}">
+          <img src="https://images.unsplash.com/featured/?${encodeURIComponent(item)}" alt="${item}" loading="lazy">
+          <div class="card-body">
+            <h3>${item}</h3>
+            <p>Prepared fresh every day using premium ingredients and traditional recipes.</p>
+          </div>
+        </div>
+      `).join('');
+
+      cardsEl.innerHTML = cardsHTML;
+    })();
+  </script>
+</body>
+</html>
